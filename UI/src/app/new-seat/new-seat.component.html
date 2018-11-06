@@ -1,0 +1,136 @@
+
+
+
+  <div id='box'  class="tier1">
+    <div class="tier21">
+      
+        <div class="tier211">
+          <app-card [card]="getHole1()" [type]="'table'"></app-card>
+          <app-card [card]="getHole2()" [type]="'table'"></app-card>
+        </div>
+      
+
+          <div *ngIf="beforeRound" class="herobutton" [ngClass]="{
+            'herounselected': this.isHeroSelected()==false,
+            'heroselected': this.isHeroSelected()==true
+          }"
+          (click)="onClickHero()">HERO</div>
+        
+          
+        <tr *ngIf="beforeRound">
+          <td *ngIf="beforeRound">
+            <div *ngIf="beforeRound" class="buttonbutton" [ngClass]="{
+              'buttonunselected': this.isButtonSelected()==false,
+              'buttonselected': this.isButtonSelected()==true
+            }"
+            (click)="onClickButton()">BTN</div>
+          </td>
+
+          <td *ngIf="beforeRound">
+            <div *ngIf="beforeRound" class="buttonbutton" [ngClass]="{
+              'buttonunselected': this.isSittingOutSelected()==false,
+              'buttonselected': this.isSittingOutSelected()==true
+            }"
+            (click)="onClickSittingOut()">S/O</div>
+          </td>
+        </tr>
+
+      <div *ngIf="beforeRound == false" class="rolebox"
+        [ngClass]="{
+          'buttonrole': this.getPosition() == 'BTN',
+          'smallblindrole': this.getPosition() == 'SB',
+          'bigblindrole': this.getPosition() == 'BB',
+          'herobox': this.seat.isHero
+        }">
+        {{getPosition()}}
+      </div>
+
+      <!--div *ngIf = "beforeRound == false && seat.isHero" class="herobox rolebox">
+        HERO
+      </div-->
+    </div>
+    
+    <div *ngIf = "this.isHero() == false && this.hasFolded() == false && this.hasAllIned() == false" class="tier22" [ngClass]="{
+      'ishisturn': this.isHisTurn()
+    }">
+      <div class="actionbutton" 
+      [ngClass]="{
+        'actionbuttondisabled': !this.isCheckAllowed(),
+        'actionbuttondown': this.isCheckButtonDown
+      }" 
+      (mousedown)="toggleCheckButtonStatus()"
+      (mouseup)="toggleCheckButtonStatus()">CHK</div>
+
+      <div class="actionbutton"
+      [ngClass]="{
+        'actionbuttondisabled': !this.isCallAllowed(),
+        'actionbuttondown': this.isCallButtonDown
+      }" 
+      (mousedown)="toggleCallButtonStatus()"
+      (mouseup)="toggleCallButtonStatus()">CLL</div>
+
+      <div class="actionbutton"
+      [ngClass]="{
+        'actionbuttondisabled': !this.isRaiseAllowed(),
+        'actionbuttondown': this.isRaiseButtonDown
+      }" 
+      (mousedown)="toggleRaiseButtonStatus()"
+      (mouseup)="toggleRaiseButtonStatus()">RSE</div>
+      
+      <div class="actionbutton"
+      [ngClass]="{
+        'actionbuttondisabled': !this.isAllInAllowed(),
+        'actionbuttondown': this.isAllInButtonDown
+      }" 
+      (mousedown)="toggleAllInButtonStatus()"
+      (mouseup)="toggleAllInButtonStatus()">ALN</div>
+      
+      <div class="actionbutton"
+      [ngClass]="{
+        'actionbuttondisabled': !this.isFoldAllowed(),
+        'actionbuttondown': this.isFoldButtonDown
+      }" 
+      (mousedown)="toggleFoldButtonStatus()"
+      (mouseup)="toggleFoldButtonStatus()">FLD</div>      
+    </div>
+    <div class="tier22" *ngIf="this.isHero() == false && this.hasFolded()">
+      <span class="folded"> </span>
+      <span class="folded"> </span>
+      <span class="folded"> F/D</span>
+      <span class="folded"> </span>
+      </div>
+    <div class="tier22" *ngIf="this.isHero() == false && this.hasAllIned()">
+      <span class="allined"> </span>
+      <span class="allined"> </span>
+      <span class="allined">A/I</span>
+      <span class="allined"> </span>
+    </div>
+    <div *ngIf="this.isHero()" [ngClass]="{
+      'ishisturn': this.isHisTurn()
+    }">
+      <div class="herodecision" [ngClass]="{
+        'herodecisionfold': this.heroDecisionIsFold(),
+        'herodecisioncheck': this.heroDecisionIsCheck(),
+        'herodecisioncall': this.heroDecisionIsCall(),
+        'herodecisionraise': this.heroDecisionIsRaise(),
+        'herodecisionallin': this.heroDecisionIsAllIn()
+      }">{{heroDecisionType}}</div>
+      <div *ngIf="this.heroDecisionChips != 0" class="herodecisionchips">{{heroDecisionChips}}</div>
+    </div>
+  </div>
+
+
+
+<!--<table border="1" style="width:400px; height:200px">
+  <tr>
+    <td rowspan="1">cards</td>
+    <td rowspan="3">actions</td>
+  </tr>
+  <tr>
+    <td rowspan="1">hero</td>
+  </tr>
+  <tr>
+    <td rowspan="3">role</td>
+  </tr>
+</table>
+-->

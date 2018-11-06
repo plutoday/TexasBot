@@ -1,0 +1,62 @@
+<div class="console-cards" [class.active] = "isActive">
+  <table>
+        <ng-container *ngFor="let row of Cards">
+            <tr>
+              <td *ngFor="let card of row">
+                <app-card [card]="card" [type]="'console'" (clicked)="onCardClicked(card)">
+                </app-card>
+              </td>
+            </tr>
+        </ng-container>
+   </table>
+</div>
+<div>
+  <button *ngIf="isPreflop" (click)="notifyHeroHoles()"
+  class="cardbutton" 
+  [ngClass]="{
+    'disabled': !isPreflop,
+    'clickable': heroHolesReady(),
+    'unclickable': !heroHolesReady(),
+    'active': isPreflop
+  }" >HOLES</button>
+  
+  <button *ngIf="isFlop" (click)="notifyFlops()"
+  class="cardbutton" 
+  [ngClass]="{
+    'disabled': !isFlop,
+    'clickable': flopsReady(),
+    'unclickable': !flopsReady(),
+    'active': isFlop
+  }" >FLOPS</button>
+ 
+  <button *ngIf="isTurn" (click)="notifyTurn()"
+  class="cardbutton" 
+  [ngClass]="{
+    'disabled': !isTurn,
+    'clickable': turnReady(),
+    'unclickable': !turnReady(),
+    'active': isTurn
+  }" >TURN</button>
+  
+  <button *ngIf="isRiver" (click)="notifyRiver()"
+  class="cardbutton" 
+  [ngClass]="{
+    'disabled': !isRiver,
+    'clickable': riverReady(),
+    'unclickable': !riverReady(),
+    'active': isRiver
+  }" >RIVER</button>
+</div>
+
+<!--div>DECISIONS
+  <app-decision *ngIf = "player0Assigned" [playerName]="player0.name"></app-decision>
+  <app-decision *ngIf = "player1Assigned" [playerName]="player1.name"></app-decision>
+  <app-decision *ngIf = "player2Assigned" [playerName]="player2.name"></app-decision>
+  <app-decision *ngIf = "player3Assigned" [playerName]="player3.name"></app-decision>
+  <app-decision *ngIf = "player4Assigned" [playerName]="player4.name"></app-decision>
+  <app-decision *ngIf = "player5Assigned" [playerName]="player5.name"></app-decision>
+</div>
+
+<div>
+  <app-hero-decision></app-hero-decision>
+</div-->

@@ -1,0 +1,24 @@
+<div [class.active]="isActive"><form [formGroup]="form"><tr>
+    <td>
+      <input
+      formControlName="chips"
+      id="chips"
+      type="text"
+      class="form-control" />
+    </td>
+    <td>
+      <label for="playerName">{{playerName}}</label>
+    </td>
+  <div *ngIf="!isHero">
+    <button (click)="check()">Check</button>
+    <button (click)="raise()">Raise</button>
+    <button (click)="call()">Call</button>
+    <button (click)="allIn()">All In</button>
+    <button (click)="fold()">Fold</button>
+  </div>
+  <div *ngIf="isHero">
+    <button (click)="getDecision()">Get Decision</button>
+  </div>
+</tr>
+</form>
+</div>

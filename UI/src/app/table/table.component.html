@@ -1,0 +1,31 @@
+<div>
+  
+  <div>RoundId: {{roundId}}</div>
+  Table
+  <div *ngFor="let seat of Seats">
+    <div *ngIf="seat.IsHero && seat.ReceivedHoles">
+      <app-seat [Hole1] = "seat.Hole1" [Hole2] = "seat.Hole2"></app-seat>
+    </div>
+    <div *ngIf="!(seat.IsHero && seat.ReceivedHoles)"><app-seat></app-seat></div>
+  </div>
+
+  <table>
+    <tr>
+      <td>
+        <app-card *ngIf = "Flop1 != undefined" [card]="Flop1" [type]="'table'"></app-card>
+      </td>
+      <td>
+        <app-card *ngIf = "Flop2 != undefined" [card]="Flop2" [type]="'table'"></app-card>
+      </td>
+      <td>
+        <app-card *ngIf = "Flop3 != undefined" [card]="Flop3" [type]="'table'"></app-card>
+      </td>
+      <td>
+        <app-card *ngIf = "Turn != undefined" [card]="Turn" [type]="'table'"></app-card>
+      </td>
+      <td>
+        <app-card *ngIf = "River != undefined" [card]="River" [type]="'table'"></app-card>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,83 @@
+
+.normal{
+    cursor: pointer;
+}
+
+.selected{
+    border: 1px red solid;
+    cursor: pointer;
+}
+
+.used{
+    filter: grayscale(100%) invert(65%); 
+}
+
+.console-card{
+    height: 90px;
+    width: 60px;   
+}
+
+.table-card{
+    height: 90px;
+    width: 60px;   
+}
+
+.normal2{
+    border: 2px grey solid;
+    cursor: pointer;
+}
+
+.selected2{
+    border: 2px red solid;
+    background-color: lightblue;
+    cursor: pointer;
+}
+
+.used2{
+    filter: grayscale(100%) invert(65%); 
+}
+
+.spade{
+    color: black;
+    font-size: 40px;
+}
+
+.heart{
+    color: red;
+    font-size: 40px;
+}
+
+.club{
+    color: green;
+    font-size: 40px;
+}
+
+.diamond{
+    color: orange;
+    font-size: 40px;
+}
+
+.folded{
+    background-color: darkgrey;
+    font-size: 60px;
+}
+
+.table-card2{
+    font-weight: bolder;
+    height: 90px;
+    width: 60px;  
+}
+
+.console-card2{
+    font-weight: bolder;
+    height: 75px;
+    width: 58px;  
+}
+
+.community-card2{
+    font-weight: bolder;
+    font-size: 60px;
+    text-align: center;
+    height: 150px;
+    width: 120px;
+}

@@ -1,0 +1,27 @@
+
+.tile{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    color: blue;
+    background: #eee;
+    padding: 1em;
+    min-height: 50em;
+}
+
+.leftboard{
+    float: left;
+}
+
+.rightboard{
+    float: right;
+    padding-right: 400px;
+}
+
+.console{
+    background: #292;
+}
+
+.active{
+    border: 2px solid red;
+}
+

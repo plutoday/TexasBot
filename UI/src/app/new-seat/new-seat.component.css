@@ -1,0 +1,174 @@
+#box{
+    border: black 2;
+    height: 200px;
+    width: 200px;
+    float: left;
+    padding-bottom: 20px;
+}
+
+.tier1{
+    border-style: solid;
+    border-width: 2px;
+    display: grid;
+    max-width: 100%;
+    max-height: 100%;
+    grid-template-columns: 1fr 1fr;
+}
+
+.tier21{
+    display: grid;
+    max-width: 100%;
+    max-height: 100%;
+    grid-template-rows: 5fr 3fr 3fr
+}
+
+.tier22{
+    display: grid;
+    max-width: 100%;
+    max-height: 100%;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    border: 1px;
+}
+
+.tier211{
+    display: grid;
+    max-width: 100%;
+    max-height: 100%;
+    grid-template-columns: 1fr 1fr
+}
+
+.container {
+    width: 60px;
+    height: 90px;
+    font-size: 30px;
+}
+
+/* resize images */
+.container img {
+    width: 200%;
+    height: auto;
+}
+
+.herobutton{
+    font-size: 30px;
+    text-align: center;
+    color: green;
+    cursor: pointer;
+    font-weight: bolder;
+    border: 2px grey solid;
+}
+
+.buttonbutton{
+    font-size: 30px;
+    text-align: center;
+    color: green;
+    cursor: pointer;
+    font-weight: bolder;
+    border: 2px grey solid;
+}
+
+.rolebox{
+    font-size: 30px;
+    text-align: center;
+    font-weight: bolder;
+    border: 2px grey solid;
+}
+
+.buttonrole{
+    color: #444
+}
+
+.smallblindrole{
+    color: lightgreen
+}
+
+.bigblindrole{
+    color: green
+}
+
+.herobox{
+    background-color: gold
+}
+
+.heroselected{
+    background-color: lightpink;
+}
+
+.buttonselected{
+    background-color: lightpink;
+}
+
+.actionbutton{
+    font-weight: bolder;
+    border: 2px grey solid;
+    cursor: pointer;
+    font-size: 24px;
+    text-align: center;
+}
+
+.actionbuttondisabled{
+    cursor: default;
+    color: grey;
+    background-color: lightgrey;
+}
+
+.actionbuttondown{
+    color: red;
+    background-color: yellow;
+}
+
+.ishisturn{
+    border: 2px red solid;
+}
+
+.folded{
+    font-size: 30px;
+    font-weight: bolder;
+    background-color: black;
+    color: lightgrey;
+}
+
+.allined{
+    font-size: 30px;
+    font-weight: bolder;
+    background-color: darkred;
+    color: orangered;
+}
+
+.herodecision{
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.herodecisionchips{
+    font-size: 30px;
+    text-align: center;
+    color: red;
+    font-weight: bolder;
+}
+
+.herodecisionfold{
+    color: black;
+    background-color: darkslategrey;
+}
+
+.herodecisioncheck{
+    color: silver;
+    background-color: sienna;
+}
+
+.herodecisioncall{
+    color: yellow;
+    background-color: darkblue;
+}
+
+.herodecisionraise{
+    color: orange;
+    background-color: yellow;
+}
+
+.herodecisionallin{
+    color: red;
+    background-color: orangered;
+}
+

@@ -1,0 +1,12 @@
+<tr>
+  <td>
+    <tr><app-new-digit-control [index]=0></app-new-digit-control></tr>
+    <tr><app-new-digit-control [index]=1></app-new-digit-control></tr>
+    <tr><app-new-digit-control [index]=2></app-new-digit-control></tr>
+    <tr><app-new-digit-control [index]=3></app-new-digit-control></tr>
+    <tr><app-new-digit-control [index]=4></app-new-digit-control></tr>
+    <tr><app-new-digit-control [index]=5></app-new-digit-control></tr>
+  </td>
+  
+  <td *ngFor="let digit of digits" class="digit">{{digit}}</td>
+</tr>

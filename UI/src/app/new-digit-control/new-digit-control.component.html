@@ -1,0 +1,6 @@
+
+  <td *ngFor="let item of digitSelectedMarks; let i = index" class="digitgrid" [ngClass]="{
+    'digitselected': item,
+    'digitunselected': !item
+  }" (click)=onDigitClick(i)>{{i}}</td>
+

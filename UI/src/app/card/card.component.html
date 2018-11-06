@@ -1,0 +1,28 @@
+<!--img src="{{card.getImgFilePath()}}" 
+  [ngClass]="{
+                'used': this.card.Used==true,
+                'selected': card.Selected==true,
+                'normal': card.Used==false && card.Selected==false,
+                'table-card': isTableCard()==true,
+                'console-card': isConsoleCard()==true
+              }" 
+  (click)="onClick()"
+/-->
+
+
+<div [ngClass]="{
+  'used2': this.card.Used==true,
+  'selected2': card.Selected==true,
+  'normal2': card.Used==false && card.Selected==false,
+  'table-card2': isTableCard()==true,
+  'console-card2': isConsoleCard()==true,
+  'community-card2': isCommunityCard()==true,
+  'heart': card.Suit=='heart',
+  'spade': card.Suit == 'spade',
+  'diamond': card.Suit=='diamond',
+  'club': card.Suit=='club',
+  'folded': card.Folded==true
+}" 
+(click)="onClick()">
+    {{card.getTextImg()}}
+</div>

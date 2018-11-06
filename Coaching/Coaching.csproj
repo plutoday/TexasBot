@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4ECFB5A9-9628-4B14-B513-9A202F634D6A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Coaching</RootNamespace>
+    <AssemblyName>Coaching</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Brain.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="FindingHandsUtils.cs" />
+    <Compile Include="Postflop\Betting\BettingDecision.cs" />
+    <Compile Include="Postflop\Betting\BettingStrategy.cs" />
+    <Compile Include="Postflop\Betting\BettingUtils.cs" />
+    <Compile Include="Postflop\Betting\BluffEvaluator.cs" />
+    <Compile Include="Postflop\Betting\CollectMoneyEvaluator.cs" />
+    <Compile Include="Postflop\Betting\ValueBetEvaluator.cs" />
+    <Compile Include="Postflop\Boards\Board.cs" />
+    <Compile Include="Postflop\Boards\BoardModel.cs" />
+    <Compile Include="Postflop\Boards\BoardSpectrums\BoardHandDetector.cs" />
+    <Compile Include="Postflop\Boards\BoardSpectrums\BoardSpectrum.cs" />
+    <Compile Include="Postflop\Boards\BoardSpectrums\BoardSpectrumFilter.cs" />
+    <Compile Include="Postflop\Boards\BoardSpectrums\BoardSpectrumMaker.cs" />
+    <Compile Include="Postflop\Boards\BoardStatus.cs" />
+    <Compile Include="Postflop\Calling\CallingStrategy.cs" />
+    <Compile Include="Postflop\EquityCalculation\BruteForceEquityCalculator.cs" />
+    <Compile Include="Postflop\BestFiveCardsHand.cs" />
+    <Compile Include="Postflop\EquityCalculation\IEquityCalculator.cs" />
+    <Compile Include="Postflop\EquityCalculation\SpectrumEquityCalculator.cs" />
+    <Compile Include="Postflop\FlopHand.cs" />
+    <Compile Include="Postflop\HolesCompareResult.cs" />
+    <Compile Include="Postflop\PostflopEnums.cs" />
+    <Compile Include="Postflop\PostflopExpert.cs" />
+    <Compile Include="Postflop\PostflopPlayerSummary.cs" />
+    <Compile Include="Postflop\PostflopStatusSummary.cs" />
+    <Compile Include="Postflop\Ranging\InitialRangeGenerator.cs" />
+    <Compile Include="Postflop\Ranging\RangeEstimator.cs" />
+    <Compile Include="Postflop\RiverHand.cs" />
+    <Compile Include="Postflop\SevenCardsHand.cs" />
+    <Compile Include="Postflop\SixCardsHand.cs" />
+    <Compile Include="Postflop\TurnHand.cs" />
+    <Compile Include="Input.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recorder.cs" />
+    <Compile Include="Round.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Flop\Flop.csproj">
+      <Project>{D8C4BEB7-FB74-4C55-9651-AD389A70E4E3}</Project>
+      <Name>Flop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{976EAD88-A3A1-4037-80F3-419A3B83D597}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Preflop\Preflop.csproj">
+      <Project>{1B94B354-A7BC-41CD-A5A7-0D073223DB93}</Project>
+      <Name>Preflop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\River\River.csproj">
+      <Project>{7175A661-B391-4156-A6D0-CFB92E0FE6AB}</Project>
+      <Name>River</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TexasBot\TexasBot.csproj">
+      <Project>{F0D3CCF9-8509-46B8-86BA-F0E331867559}</Project>
+      <Name>TexasBot</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Turn\Turn.csproj">
+      <Project>{7EA7AF67-01B0-42E3-A301-B8A0ACF21799}</Project>
+      <Name>Turn</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

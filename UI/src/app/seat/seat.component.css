@@ -1,0 +1,12 @@
+.playerName{
+    font-weight: bold;
+    color: grey;
+}
+
+.boxed{
+    border:1px solid green;
+}
+
+.hero{
+    background-color: #ffa
+}

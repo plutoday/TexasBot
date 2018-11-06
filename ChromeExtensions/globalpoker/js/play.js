@@ -1,0 +1,31 @@
+$(function () {
+    console.info('load play.js');
+    function injectCustomJs(jsPath)
+    {
+        jsPath = jsPath || 'js/inject.js';
+        var temp = document.createElement('script');
+        temp.setAttribute('type', 'text/javascript');
+        // 获得的地址类似：chrome-extension://ihcokhadfjfchaeagdoclpnjdiokfakg/js/inject.js
+        temp.src = chrome.extension.getURL(jsPath);
+        temp.onload = function()
+        {
+            // 放在页面不好看，执行完后移除掉
+            this.parentNode.removeChild(this);
+        };
+        document.head.appendChild(temp);
+    }
+    //var iframe = ;
+    var onload = function () {
+        var $commuityCards = $('.community-cards');
+        $commuityCards.bind('DOMNodeInserted', function(e) {
+            console.log($(e.target).html());
+        });
+    };
+    injectCustomJs('js/gamewatcher.js');
+    // var interval = setInterval(function () {
+    //     if ($('#viewPort').length > 0) {
+    //         clearInterval(interval);
+    //         onload();
+    //     }
+    // }, 1000);
+});

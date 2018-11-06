@@ -1,0 +1,16 @@
+.digitgrid{
+    height: 40px;
+    width: 40px;
+    font-weight: bolder;
+    font-size: 30px;
+    border: 2px, black, solid;
+    text-align: center;
+    cursor: pointer;
+}
+
+.digitselected{
+    background-color: red;
+}
+.digitunselected{
+    background-color: yellow;
+}

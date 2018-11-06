@@ -1,0 +1,7 @@
+﻿[x]Fix the chipsAlreadyBet logic in Player
+[ ]Provide the percentiles
+[x]Implement the blinds preflop strategy
+[ ]Refactor the Input to employ some random card drawing functions
+[ ]Customize preflop betting size based on position/hands
+
+[ ]Implement the post flop strategy

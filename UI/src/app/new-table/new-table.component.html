@@ -1,0 +1,16 @@
+  <tr>
+    <app-new-seat [seat]="seats[0]" [beforeRound]="beforeRound" [raised]="streetRaised"></app-new-seat>
+    <app-new-seat [seat]="seats[1]" [beforeRound]="beforeRound" [raised]="streetRaised"></app-new-seat>
+    <app-new-seat [seat]="seats[2]" [beforeRound]="beforeRound" [raised]="streetRaised"></app-new-seat>
+  </tr>
+  <tr><app-new-community></app-new-community></tr>
+  <tr>
+    <app-new-seat [seat]="seats[5]" [beforeRound]="beforeRound" [raised]="streetRaised"></app-new-seat>
+    <app-new-seat [seat]="seats[4]" [beforeRound]="beforeRound" [raised]="streetRaised"></app-new-seat>
+    <app-new-seat [seat]="seats[3]" [beforeRound]="beforeRound" [raised]="streetRaised"></app-new-seat>
+  </tr>
+  <tr><div class="newroundbutton"
+    [ngClass]="{
+      'clickeddown': isNewRoundButtonClickedDown(),
+      'newroundnotready': isReadyToStartNewRound() == false
+    }" (mousedown)="toggleNewRoundButtonStatus()" (mouseup)="toggleNewRoundButtonStatus()">START A NEW ROUND</div></tr>

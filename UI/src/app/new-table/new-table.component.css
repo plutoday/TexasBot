@@ -1,0 +1,17 @@
+.newroundbutton{
+    border: 2px grey solid;
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    min-height: 60px;
+    cursor: pointer;
+}
+
+.clickeddown{
+    background-color: lightsalmon;
+}
+
+.newroundnotready{
+    color: grey;
+    background-color: lightgrey;
+}

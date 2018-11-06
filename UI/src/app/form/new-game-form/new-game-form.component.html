@@ -1,0 +1,123 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" [class.active]="isActive">
+  <div class="form-group" formGroupName="players">    
+    <tr>
+      <td><input 
+        formControlName="player0"
+        id="player0"
+        type="text"
+        class="form-control" />
+      </td>
+      <td><label for="player0">Player 0</label></td>
+    </tr>
+    
+    <tr>
+      <td><input 
+        formControlName="player1"
+        id="player1"
+        type="text"
+        class="form-control" />
+      </td>
+      <td><label for="player1">Player 1</label></td>
+    </tr>
+    <tr>
+      <td><input 
+        formControlName="player2"
+        id="player2"
+        type="text"
+        class="form-control" /></td>
+      <td><label for="player2">Player 2</label></td>
+    </tr>
+  
+    <tr>
+      <td><input 
+        formControlName="player3"
+        id="player3"
+        type="text"
+        class="form-control" />
+      </td>
+      <td><label for="player3">Player 3</label></td>
+    </tr>
+    <tr>
+      <td><input 
+        formControlName="player4"
+        id="player4"
+        type="text"
+        class="form-control"/></td>
+      <td><label for="player4">Player 4</label></td>
+    </tr>
+
+    <tr>
+      <td><input 
+        formControlName="player5"
+        id="player5"
+        type="text"
+        class="form-control"  />
+      </td>
+      <td><label for="player5">Player 5</label></td>
+    </tr>
+  </div>
+    
+    <!--label for="smallBlind">Small Blind</label>
+    <input 
+      formControlName="smallBlind" 
+      id="smallBlind"
+      type="text"
+      class="form-control" />
+    <label for="smallBlind">Big Blind</label>
+    <input 
+      formControlName="bigBlind" 
+      id="bigBlind"
+      type="text"
+      class="form-control" />
+    <label for="heroIndex">Hero Seat</label>
+    <input 
+      formControlName="heroIndex" 
+      id="heroIndex"
+      type="text"
+      class="form-control" />
+    <label for="buttonIndex">Button Seat</label>
+    <input 
+      formControlName="buttonIndex" 
+      id="buttonIndex"
+      type="text"
+      class="form-control" /-->
+
+  <tr>SMALL BLIND
+    <span *ngFor="let entry of smallBlindSizes let idx = index">
+    <td>
+        <input type="radio" name="smallBlindSize" 
+          [checked]="idx === 0" 
+          [value]="entry.value" 
+          (change)="onSmallBlindSizeChange(entry)">
+    </td>
+    <td>{{entry.description}}</td>
+  </span>
+  </tr>
+
+
+  <tr>HERO SEAT
+      <span *ngFor="let entry of seatIndexes let idx = index">
+      <td>
+          <input type="radio" name="heroIndex" 
+            [checked]="idx === 5" 
+            [value]="entry.value" 
+            (change)="onHeroIndexChange(entry)">
+      </td>
+      <td>{{entry.description}}</td>
+    </span>
+    </tr>
+
+
+    <tr>BUTTON SEAT
+        <span *ngFor="let entry of seatIndexes let idx = index">
+        <td>
+            <input type="radio" name="buttonIndex" 
+              [checked]="idx === 0" 
+              [value]="entry.value" 
+              (change)="onButtonIndexChange(entry)">
+        </td>
+        <td>{{entry.description}}</td>
+      </span>
+      </tr>
+  <button type="submit">Start A New Round</button>
+</form>

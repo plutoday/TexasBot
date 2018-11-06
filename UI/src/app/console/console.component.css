@@ -1,0 +1,29 @@
+.card{
+    float: left;
+    margin-left: 8px;
+    margin-top: 8px;
+}
+
+.clickable{
+    cursor: pointer;
+    font-weight: bolder;
+    color: red;
+    background-color: coral;
+}
+
+.unclickable{
+    color: grey;
+    font-weight: bolder;
+}
+
+.disabled{
+    color: rgb(201, 196, 196);
+    background-color: white;
+}
+
+.cardbutton{
+    height: 60px;
+    width: 150px;
+    font-size: 40px;
+    text-align: center;
+}
